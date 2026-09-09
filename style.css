@@ -1,0 +1,504 @@
+/* إعدادات عامة وتثبيت الخط الراقي */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #12334f; /* درجة اللون الأزرق المستخرجة مباشرة من شعارك */
+    color: #e2e8f0;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* الشريط العلوي باللون الأبيض بالكامل */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.nav-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #12334f; /* الشعار بنفس لون هوية الشعار */
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-logo span {
+    color: #3b82f6;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #4b5563; /* لون علامات التبويب والأزرار داخل الشريط الابيض */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #12334f;
+    font-weight: 700;
+}
+
+/* تنسيق قسم الـ Hero ليحتوي الفيديو المتحرك */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* إخفاء أي أجزاء خارج إطار القسم */
+    padding-top: 80px;
+}
+
+/* تنسيق ووضع الفيديو في الخلفية */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* طبقة التعتيم الزرقاء المأخوذة من الشعار لتوضيح النصوص فوق الفيديو */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 51, 79, 0.85); /* درجة الأزرق الخاصة بشعارك مع شفافية متوازنة */
+    z-index: 1;
+}
+
+/* التأكد من أن محتوى النصوص والأزرار يظهر فوق الفيديو والتعتيم */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    max-height: 110px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: #60a5fa;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #93c5fd;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* الأزرار الفاخرة */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #12334f;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* عناوين الأقسام */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 3px;
+    background: #60a5fa;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* قسم من نحن */
+.about-section {
+    padding: 100px 0;
+    background: #0d253a; /* درجة أعمق قليلاً لتناسق الأقسام */
+}
+
+.about-card {
+    background: rgba(18, 51, 79, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.about-card p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    line-height: 2.2;
+    font-weight: 300;
+}
+
+/* قسم الخدمات (القطاعات الأربعة) */
+.services-section {
+    padding: 100px 0;
+    background: #12334f;
+}
+
+/* شبكة البطاقات */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* تنسيق البطاقات لتكون بصور خلفية وتأثيرات فخمة */
+.card {
+    position: relative;
+    height: 320px; /* ارتفاع البطاقة لتبدو وكأنها لوحة فخمة */
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+/* طبقة تعتيم تدرجية فوق الصورة لبروز العنوان والنص بوضوح */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(18, 51, 79, 0.95), rgba(18, 51, 79, 0.2));
+    transition: background 0.4s ease;
+    z-index: 1;
+}
+
+/* محتوى البطاقة (العنوان والنص) */
+.card-content {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    transition: transform 0.4s ease;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.card p {
+    color: #93c5fd;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.card-arrow {
+    color: #60a5fa;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* تأثير التكبير والتفاعل عند تمرير الماوس على البطاقة */
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(18, 51, 79, 0.98), rgba(18, 51, 79, 0.4));
+}
+
+.card:hover .card-arrow {
+    transform: translateX(-5px); /* حركة السهم للخارج عند الهوفر */
+}
+/* الفوتر */
+.footer {
+    background: #0a1b2b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    padding: 70px 0 30px 0;
+}
+
+.footer h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #93c5fd;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    margin-bottom: 30px;
+}
+
+.btn-social {
+    display: inline-block;
+    background: rgba(18, 51, 79, 0.8);
+    color: #ffffff;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    background: #ffffff;
+    color: #12334f;
+    border-color: #ffffff;
+}
+
+.copyright {
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 20px;
+}
+
+/* تنسيق الصفحات الفرعية */
+.page-hero {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #0d253a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 60px;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    color: #93c5fd;
+    font-size: 1.1rem;
+}
+
+.page-content-box {
+    background: rgba(18, 51, 79, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 50px;
+    border-radius: 14px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.page-content-box h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.page-content-box p {
+    color: #93c5fd;
+    margin-bottom: 30px;
+}
+
+/* شبكة عرض المنتجات في المتجر */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* بطاقة المنتج الفاخرة */
+/* خلفية صفحة المتجر: صورة ثابتة مظللة بلون الهوية الأزرق */
+body.store-page {
+    background: linear-gradient(rgba(18, 51, 79, 0.9), rgba(18, 51, 79, 0.92)), url('store-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* يجعل الصورة ثابتة أثناء التمرير */
+}
+
+/* شبكة عرض المنتجات في المتجر */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* بطاقة المنتج الفاخرة (خلفية بيضاء بالكامل) */
+.product-card {
+    background: #ffffff; /* خلفية بيضاء نقية للبطاقة */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* صورة المنتج داخل البطاقة */
+.product-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* معلومات المنتج (نصوص بلون داكن لتتناسب مع الخلفية البيضاء) */
+.product-info {
+    padding: 25px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    color: #12334f; /* عنوان باللون الأزرق الداكن لهوية الشعار */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.product-desc {
+    color: #4b5563; /* لون رمادي داكن وراقي للوصف ليكون سهل القراءة */
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* تذييل البطاقة (السعر وزر الطلب) */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.product-price {
+    color: #12334f;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.product-btn {
+    background: #25d366; /* لون الواتساب الجذاب */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.product-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
